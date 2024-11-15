@@ -1,0 +1,166 @@
+.shark{
+    left:100px; top:400px;
+    position: absolute;
+    animation-name: Shark;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes Shark{
+    0% {left:100px; top:400px;}
+    20% {left:300px; top:400px;}
+    40% {left:500px; top:300px;}
+    50% {left:600px; top:50px;}
+    60% {left:600px; top:100px;}
+    80% {left:500px; top:200px;}
+    100% {left:100px; top:400px; transform: scaleX(-1);}
+}
+.diver1{
+    left: 50px; top: 150px;
+    width: 300px; height: 200px;
+    position: absolute;
+    animation-name: diver1;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes diver1 {
+  0% {left:50px; top:150px;}  
+  20% {left:650px; top:80px;}
+  40% {left:1250px; top:150px;}
+  50% {left:1450px; top:180px;}
+  60% {left:1150px; top:150px;}
+  80% {left:650px; top:100px;}  
+  100% {left:50px; top:180px; transform:scaleX(-1);}
+}
+.diver2{
+    left: 50px; top: 250px;
+    width: 300px; height: 200px;
+    position: relative;
+    animation-name: diver2;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes diver2 {
+  0% {left:100px; top:80px;}  
+  20% {left:700px; top:180px;}
+  40% {left:1150px; top:130px;}
+  50% {left:1400px; top:180px;}
+  60% {left:1150px; top:160px;}
+  80% {left:700px; top:180px;}  
+  100% {left:50px; top:100px; transform:scaleX(-1);}
+}
+.diver3
+{
+    width: 300px; height: 200px;
+    left: 50px; top: 50px;
+    position: absolute;
+    animation-name: diver3;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes diver3
+{
+  0% {left:100px; top:50px;}  
+  20% {left:600px; top:180px;}
+  40% {left:1050px; top:50px;}
+  50% {left:1300px; top:180px;}
+  60% {left:950px; top:50px;}
+  80% {left:400px; top:180px;}  
+  100% {left:100px; top:50px; transform:scaleX(-1);}
+}
+.goldFishSchool{
+    width: 250px; height: 250px;
+    left: 50px; top: 600px;
+    position: absolute; 
+    animation-name: goldFishSchool;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes goldFishSchool{
+  0% {left:50px; top:400px;}  
+  20% {left:550px; top:300px;}
+  40% {left:950px; top:400px;}
+  50% {left:1300px; top:300px;}
+  60% {left:1100px; top:400px;}
+  80% {left:550px; top:300px;}  
+  100% {left:150px; top:400px; transform:scaleX(-1);}
+}
+.faintSchool{
+    width: 150px; height: 200px;
+    left: 50px; top: 600px;
+    position: absolute; 
+    animation-name: faintSchool;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-play-state: unset;
+}
+@keyframes faintSchool{
+    0% {left:300px; top:5px;}
+    20% {left:750px; top:5px;}
+    40% {left:1100px; top:5px;}
+    50% {left:1300px; top:5px;}
+    60% {left:900px; top:5px;}
+    80% {left:550px; top:8px;}  
+    100% {left:300px; top:2px; transform:scaleX(-1);}
+}
+.turtle
+{
+    width: 150px; height: 120px;
+    left: 50px; top: 600px;
+    position: absolute; 
+    animation-name: goldFishSchool;
+    animation-duration: 14s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes turtle{
+  0% {left:50px; top:400px;}  
+  20% {left:550px; top:300px;}
+  40% {left:950px; top:400px;}
+  50% {left:1300px; top:300px;}
+  60% {left:1100px; top:400px;}
+  80% {left:550px; top:300px;}  
+  100% {left:150px; top:400px; transform:scaleX(-1);}
+}
+.water {
+
+    &::before, &::after {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-image: url("https://assets.codepen.io/1948355/water.jpg");
+        background-size: calc(100% + 200px);
+        opacity: 0.15;
+    }
+
+    &::before {
+        filter: blur(8px);
+        animation: waterX $swimSpeed/2 alternate infinite ease-in-out;
+    }
+
+    @keyframes waterX {
+        from { background-position: left;}
+        to { background-position: right;}
+    }
+
+    &::after {
+        filter: blur(5px);
+        animation: waterY $swimSpeed/2 $swimSpeed/-4 alternate infinite ease-in-out;
+    }
+
+    @keyframes waterY {
+        from { background-position: top;}
+        to { background-position: bottom;}
+    }
+}
